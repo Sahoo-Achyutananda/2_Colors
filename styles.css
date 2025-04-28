@@ -1,0 +1,290 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction : column;
+    height: 100vh;
+    width: 100vh;
+}
+
+.upper-container {
+    display:flex;
+    flex-direction: row;
+    background-color: white;
+    height: 75%;
+    width: 100vw;
+}
+
+.lower-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(31, 143, 255, 1), rgb(248, 235, 58, 1));
+    height: 25%;
+    width: 100vw;
+}
+
+/* Gradient Switch*/
+
+
+
+.gradient-switch {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 5px;
+    
+}
+
+#linear, #radial, #conic{
+    width: 98px;
+    height: 30px;
+    font:  bold 15px "Poppins", sans-serif ;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.238);
+    background-color: rgba(240, 248, 255, 0.477);
+}
+
+#linear:hover, #radial:hover, #conic:hover{
+    /* border: 2px solid rgba(128, 128, 128, 0.385); */
+    opacity: 80%;
+}
+#linear {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#conic {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.selected{
+    background-color: rgba(71, 71, 71, 0.803) !important;
+    color: white !important;
+} 
+
+/* ----------------------------------------- */
+
+.left,.right {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*GPT suggestion*/
+    /* transition: background-color 0.3s ease; ---- Removed because - getUpdatedStyle() didnt work properly due to this*/
+}
+
+.left{
+    background-color: rgb(31, 143, 255, 1);
+}
+
+.right {
+    background-color: rgb(248, 235, 58, 1);
+}
+
+/*Copy Buttons*/
+.hex-left-parent, .rgb-left-parent, .rgb-right-parent, .hex-right-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.hex-left-copy, .rgb-left-copy, .hex-right-copy, .rgb-right-copy , .gradient-copy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.318);
+
+    cursor: pointer;
+} 
+.gradient-copy{
+    margin:0px;
+    margin-left: 15px;
+}
+.hex-left-copy:hover, .rgb-left-copy:hover , .hex-right-copy:hover, .rgb-right-copy:hover, .gradient-copy:hover {
+    color: rgba(255, 255, 255, 0.723);
+    background-color: rgba(255, 255, 255, 0.203);
+}
+
+/*-----------------------------------------------*/
+#hexcodeleft, #rgbcodeleft, #hexcoderight, #rgbcoderight {
+    padding : 15px;
+    border-radius: 10px;
+    background-color : rgba(255,255,255,0.4);
+    margin: 5px;
+}
+
+#leftclick, #rightclick {
+    width : 150px;
+    height : 50px;
+    border-radius: 5px;
+    border: 3px solid white;
+    /* border:none; */
+    background-color:darkviolet ;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+
+    margin: 20px;
+    padding: 10px;
+
+    transition: width 0.3s ease;
+}
+
+#leftclick:hover, #rightclick:hover {
+    background-color:rgb(106, 1, 151) ;
+    width: 155px;
+    /* height: 60px; */
+}
+
+/*Gradient Slider in the lower container*/
+.gradient-slider {
+    display: flex;
+    width: 300px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0.214);
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/*Experimenting*/
+
+.color_view, .rgb-left, .hex-left, .rgb-right, .hex-right {
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.318);
+}
+
+.red, .green, .blue, .alpha {
+    width: 20%;
+    height: 35px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255, 0.4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 700 17px "Roboto", sans-serif ;
+
+}
+
+.red {
+    background-color: rgb(255, 0, 0, 0.5);
+}
+.green {
+    background-color: rgb(0, 255, 0, 0.5);
+}
+.blue {
+    background-color: rgb(0, 0, 255, 0.5);
+}
+.alpha {
+    color: black;
+}
+
+.red:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+.green:hover {
+    background-color: rgb(0, 255, 0, 1);
+}
+.blue:hover {
+    background-color: rgb(0, 0, 255, 1);
+}
+.alpha:hover {
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+
+/*Code for Sliders -- */
+
+/*Common for all browsers*/
+.custom_slider {
+    -webkit-appearance: none; /*turns off the default look in chrome,edge,safari*/
+    appearance: none; /*turns of the default look in mozilla*/
+    width: 175px;
+    height: 25px;
+    padding-inline: 2px;
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255);
+    margin-top: 20px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+/*for mozilla*/
+.custom_slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: rgb(83, 61, 83);
+    
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/*for other browsers*/
+.custom_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(179, 0, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#leftred, #rightred {
+    background-color: rgb(255, 79, 79);
+}
+
+#leftred:hover, #rightred:hover {
+    background-color: rgb(236, 60, 60);
+}
+
+#leftgreen, #rightgreen {
+    background-color: rgb(37, 245, 44);
+}
+
+#leftgreen:hover, #rightgreen:hover {
+    background-color: rgb(20, 229, 27);
+}
+
+#leftblue, #rightblue {
+    background-color: rgb(128, 105, 255);
+}
+
+#leftblue:hover, #rightblue:hover {
+    background-color: rgb(100, 74, 248);
+}
+
+#gradient-angle-slider{
+    margin:0px; /*By default it had a value of top margin 20px*/
+}
