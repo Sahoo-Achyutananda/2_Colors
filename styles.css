@@ -1,13 +1,14 @@
 * {
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
 }
 
 .main-container {
     display: flex;
     flex-direction : column;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
 .upper-container {
@@ -93,6 +94,15 @@
 }
 
 /*Copy Buttons*/
+
+.my-icon, .my-icon-gradient {
+    width: 25px;
+    height: 25px;
+}
+
+.copy_text{
+    display: none;
+}
 .hex-left-parent, .rgb-left-parent, .rgb-right-parent, .hex-right-parent {
     display: flex;
     justify-content: center;
